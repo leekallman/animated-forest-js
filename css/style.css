@@ -1,0 +1,356 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+@font-face {
+	font-family: odachi;
+	src: url(odachi.woff);
+}
+
+body{
+	font-family: odachi;
+	width:100%;
+	color:white;
+}
+.background{
+	display: block;
+	width: 100%;
+	position: fixed;
+	z-index: -1;
+}
+
+.heading {
+	text-align: center;
+	font-size: 100px;
+	position: absolute;
+	top:20%;
+	left:50%;
+	transform: translate(-50%, -50%);
+}
+
+
+.quest {
+	position: absolute;
+	bottom:5%;
+	left:3%;
+	font-size: 1.5rem;
+	color:white;
+	text-decoration:none;
+}
+
+.quest span{
+  	padding:0 13px;
+	border-radius: 50%;
+	border-color: white;
+	text-align: center;
+	border: 3px solid;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #014678;
+  margin: 5% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: none;
+  width: 60%; /* Could be more or less, depending on screen size */
+  color:white;
+  font-family: 'Roboto', sans-serif;
+}
+.modal-content h1, .modal-content p{
+	padding-bottom:20px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.buttons button{
+	background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    font-family: Odachi;
+    font-size: 1.3rem;
+    color:white;
+}
+
+.buttons {
+position: absolute;
+top:16%;
+right:13%;
+}
+
+
+.buttons .night{
+/*	display: none;*/
+}
+
+
+/*.lake{
+	position: absolute;
+	right:50%;
+	top:50%;
+	z-index: 3;
+}*/
+
+#bjorn, #wolf, #appletree, #apple, #pine, #tent, #bird, #fire, #lake{
+	cursor:pointer;
+}
+
+
+#bjorn, #wolf, #bird{
+	-webkit-animation: animal 2s infinite; 
+	/* Chrome, Safari 5 */
+    -moz-animation: animal 2s infinite; 
+    /* Firefox 5-15 */
+    -o-animation: animal 2s infinite; 
+    /* Opera 12+ */
+    animation: animal 2s infinite;
+}
+
+#appletree, #pine, #tent{
+	-webkit-animation: things 2s infinite; 
+	/* Chrome, Safari 5 */
+    -moz-animation: things 2s infinite; 
+    /* Firefox 5-15 */
+    -o-animation: things 2s infinite; 
+    /* Opera 12+ */
+    animation: things 2s infinite;
+}
+
+#bjorn{
+	position: absolute;
+	right:5%;
+	bottom:5%;
+
+	filter:drop-shadow(1px 1px 2px #222);
+}
+
+#wolf{
+	position: absolute;
+	left:10%;
+	bottom:22%;
+
+	filter:drop-shadow(1px 1px 2px #222);
+}
+
+#appletree{
+	position: absolute;
+	right:25%;
+	bottom:17%;
+	filter:drop-shadow(1px 1px 2px #222);
+}
+#apple{
+	position: absolute;
+	right:35%;
+	bottom:28%;
+	filter:drop-shadow(1px 1px 2px #222);
+}
+
+#pine{
+	position: absolute;
+	right:17%;
+	bottom:20%;
+	filter:drop-shadow(1px 1px 2px #222);
+}
+
+#tent{
+	position: absolute;
+	left:20%;
+	bottom:10%;
+	filter:drop-shadow(1px 1px 2px #222);
+}
+
+#bird {
+	position: absolute;
+	left:65%;
+	bottom:42%;
+	filter:drop-shadow(1px 1px 2px #222);
+}
+
+#fire {
+	position: absolute;
+	right:60%;
+	bottom:10%;
+	filter:drop-shadow(1px 1px 2px #222);
+}
+
+.fall {
+	animation: fall 10s ;
+}
+
+
+@keyframes fall {
+	0% { transform: translateY(0px); }
+	100%{ transform: translateY(-15px); }
+}
+
+@keyframes animal {
+	0% { transform: rotate(2deg);
+		right:1%;
+	 }
+	50%{ transform: rotate(5deg);
+	right:2%; }
+	100%{ transform: rotate(0deg);
+	right:1%; }
+}
+
+@keyframes things {
+	0% { transform: rotate(-1deg);
+	 }
+	50%{ transform: rotate(-3deg);
+	}
+	100%{ transform: rotate(0deg);
+	}
+}
+@keyframes fire {
+	0% { transform: skew(0deg);
+		top:2%;
+	 }
+	25%{ transform: rotate(-3deg);
+	 }
+	50%{ transform: skew(-2deg);
+		top:7%;
+	}
+	75%{ transform: rotate(1deg);
+	}
+	100%{ transform: skew(2deg);
+		top:3%;
+	}
+}
+
+@keyframes flap {
+	50% {
+		transform: rotate(5deg);
+	}
+}
+
+.cls-31{
+	animation: fire 1s infinite;
+}
+
+.cls-32 {
+}
+
+.cls-33 {
+	animation: things 0.7s infinite;
+}
+
+.move {
+	animation: flap 1s infinite;
+	transform-origin: left;
+}
+
+.day #linear-gradient{
+	--color-stop-1: #ffffd4;
+  	--color-stop-2: #70d6ff;
+}
+
+#linear-gradient{
+	--color-stop-1: #ff9f62;
+  	--color-stop-2: #ffe8a8;
+}
+
+
+.day #radial-gradient{
+	--color-stop-1: #ffea4a;
+  	--color-stop-2: #d4f3e0;
+}
+
+#radial-gradient{
+	--color-stop-1: #e95e00;
+  	--color-stop-2: #fec581;
+}
+
+.day #linear-gradient-3{
+	--color-stop-1: #78d8ff;
+  	--color-stop-2: #78d8ff;
+  	--color-stop-3: #3e9ae6; 	
+}
+
+#linear-gradient-3{
+	--color-stop-1: #4c8886;
+  	--color-stop-2: #497297;
+  	--color-stop-3: #465aa9;
+}
+
+
+.day .mount1 {
+	fill: #bebff2;
+}
+.day .mount2 {
+	fill: #aeafde;
+}
+
+.day .mount3 {
+	fill: #c8c9ff;
+}
+
+.moon {
+/*	position: absolute;
+	top:0;
+	left:0;
+	transform: translate(-50%, -50%) ;*/
+ 	animation: moon 3s infinite;
+ }
+
+@keyframes moon {
+	0%   {transform: scale(1);}
+	50%   {transform: translate(4%, 1%) scale(0.95);}
+	100%   {transform: scale(1);}
+}
+
+ .day .moon{
+	fill: url(#radial-gradient) #fff;
+ }
+
+
+
+
+ .day .ground {
+ 	fill: #5d7911;
+ }
+ .day .trees {
+ 	fill: #4f6f19;
+ }
+
+
+ .day .snow1, .day .snow2, .day .snow3 {
+ 	fill: #ffccff;
+ }
+
+
+@media screen and (max-width: 600px){
+
+	.background{
+		display:none;
+	}
+}
